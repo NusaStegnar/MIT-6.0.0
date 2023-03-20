@@ -1,13 +1,13 @@
 # Convert the following into code that uses a while loop.
+""" 
+print 2
+print 4
+print 6
+print 8
+print 10
+print "Goodbye" """
 
-""" prints 2
-prints 4
-prints 6
-prints 8
-prints 10
-prints Goodbye! """
-
-""" i = 0
+i = 0
 for i in range(2,11,2):
     print(i)
 print("Goodbye")
@@ -16,24 +16,26 @@ num = 2
 while num <= 10:
     print(num)
     num += 2
-print("Goodbye") """
+print("Goodbye") 
 
 # Convert the following into code that uses a while loop.
 
-""" prints Hello!
-prints 10
-prints 8
-prints 6
-prints 4
-prints 2 """
+""" print "Hello!"
+print 10
+print 8
+print 6
+print 4
+print 2 """
 
-""" print("Hello!")
+
+
+print("Hello!")
 num = 10
 while num <= 10:
     if num < 2:
         break
     print(num)
-    num -= 2 """
+    num -= 2
 
 # Write a while loop that sums the values 1 through end, inclusive. End is a variable that we define for you. 
 # So, for example, if we define end to be 6, your code should print out the result:

@@ -3,9 +3,9 @@ STRINGS
  enclose in quotation marks or single quotes
 
 hi = "hello there”
-greetings = ‘hello’
+greetings = "hello"
 
- concatenate strings
+# concatenate strings
 name = "eric"
 greet = hi + name
 greeting = hi + " " + name

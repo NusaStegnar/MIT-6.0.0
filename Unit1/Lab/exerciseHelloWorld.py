@@ -1,4 +1,4 @@
-#Write a piece of Python code that prints out the string hello world
+# Write a piece of Python code that prints out the string hello world
 
 str1 = "hello"
 str2 = "world"

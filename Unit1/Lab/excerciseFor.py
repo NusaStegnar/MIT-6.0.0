@@ -7,7 +7,9 @@ prints 8
 prints 10
 prints Goodbye! """
 
-
+for i in range(2,12,2):
+    print(i)
+print("Goodbye!")
 
 
 #Convert the following code into code that uses a for loop.
@@ -19,7 +21,9 @@ prints 6
 prints 4
 prints 2 """
 
-
+print("Hello!")
+for i in range(10,0,-2):
+    print(i)
         
 # Write a for loop that sums the values 1 through end, inclusive. 
 # end is a variable that we define for you. 
@@ -29,6 +33,12 @@ prints 2 """
 # Our automating testing will provide values so write your code in the 
 # following box assuming these variables are already defined.
 
+num = 1
+total = 6
+for num in range(6):
+    total += num
+    num += 1
+print(total)
 
 
     

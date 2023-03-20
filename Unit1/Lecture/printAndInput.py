@@ -27,7 +27,7 @@ print(5*num) """
 
 box = input("write smething special: ")
 print(box)
-print(5*box)
+print(5 * box)
 print(type(box))
 
 number = int(input("Write the number of your choice: "))
