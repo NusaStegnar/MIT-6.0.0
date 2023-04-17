@@ -20,4 +20,10 @@ while uinput != "c":
         print("Sorry, I did not understand your input.")
 
 
+#Complexty
 #test = [1, 2, 345, 5, 55, 66, 78, 66]
+#O(n)
+#sort O(log(n))
+#test = [1, 2, 5, 55, 66, 66, 78, 345]
+#bisection O(log(n))
+# => O(2*log(n))

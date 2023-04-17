@@ -1,4 +1,4 @@
-""" x = 25
+x = 25
 epsilon = 0.01
 step = 0.1
 guess = 0.0
@@ -44,7 +44,7 @@ while abs(guess ** 2 - x) >= epsilon:
 if abs(guess ** 2 - x) >= epsilon:
     print("Failed")
 else:
-    print("Succeded: " + str(guess)) """
+    print("Succeded: " + str(guess)) 
 
 
 x = 23

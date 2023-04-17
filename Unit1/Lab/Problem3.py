@@ -9,7 +9,9 @@ Longest substring in alphabetical order is: abc """
 
 s = "azcbobobegghakl"
 
-current = long = last = ""
+current = ""
+long = ""
+last = ""
 # init current, longest, and last char empty
 
 for char in s:
