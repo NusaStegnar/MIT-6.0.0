@@ -8,33 +8,28 @@
 
 months = 1
 balance = 3329
-start = 10
-temporary = start
-balance = temporary
 annual_interest_rate = 0.2
+monthly_interest_rate = annual_interest_rate / 12.0
+minimum_fixed_monthly_payment = balance / 12
 
 
-def updated_balance_each_month():
+monthly_unpaid_balance = updated_balance_each_month - (minimum_fixed_monthly_payment * monthly_interest_rate)
+updated_balance_each_month = (monthly_unpaid_balance) + (monthly_interest_rate * monthly_unpaid_balance)
+
+def update_balance_each_month():
     """ calculate updated balance for each month """
-    return monthly_unpaid_balance + (monthly_interest_rate * monthly_unpaid_balance)
-
-def monthly_interest_rate():
-    """ calculate monthly enterest rate """
-    return annual_interest_rate / 12.0
-
-def monthly_unpaid_balance():
+    return (monthly_unpaid_balance) + (monthly_interest_rate * monthly_unpaid_balance)
+    
+    
+def month_unpaid_balance():
     """ calculate unpaid balance for each month """
-    return previous_balance - minimum_fixed_monthly_payment
-
+    return updated_balance_each_month - (minimum_fixed_monthly_payment * monthly_interest_rate) 
+    
+    
 while months < 12:
-    monthly_interest_rate()
-    monthly_unpaid_balance()
-    updated_balance_each_month()
-    if start != balance:
-        months += 1
-        start *= 10
-    else:
-        break
+    month_unpaid_balance()
+    update_balance_each_month()
+    months += 1
 
 lowest = updated_balance_each_month()
 

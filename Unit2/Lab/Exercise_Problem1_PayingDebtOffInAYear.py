@@ -22,40 +22,31 @@
 # Updated balance each month = (Monthly unpaid balance) + (Monthly interest rate x Monthly unpaid balance)
 
 
-balance = 5000
-monthly_payment_rate = 0.02
-annual_interest_rate = 0.18
-month = 1
+balance = 42
+monthly_payment_rate = 0.04
+annual_interest_rate = 0.2
 
-minimum_monthly_payment = monthly_payment_rate * balance
-monthly_unpaid_balance = balance - minimum_monthly_payment
-new_balance = monthly_unpaid_balance + annual_interest_rate / 12.0 * monthly_unpaid_balance
+def calculate_monthly_interest_rate(_annual_interest_rate):
+    return _annual_interest_rate / 12
 
-def prev_balance():
-    """ calculate previous balance """
-    return monthly_unpaid_balance + annual_interest_rate / 12.0 * monthly_unpaid_balance
-    
-def min_monthly_payment():
-    """ calculate minimum payment for each month """
-    return monthly_payment_rate * new_balance
+def calculate_minimum_monthly_payment(_monthly_payment_rate, _balance):
+    return _monthly_payment_rate * _balance
 
-def month_unpaid_balance():
-    """ calculate unpaid balance for each month """
-    return new_balance - minimum_monthly_payment
+def calculate_monthly_unpaid_balance(_balance, _minimum_monthly_payment):
+    return _balance - _minimum_monthly_payment
 
+def get_updated_monthly_balance(_monthly_unpaid_balance, _annual_interest_rate):
+    return _monthly_unpaid_balance + calculate_monthly_interest_rate(_annual_interest_rate) * _monthly_unpaid_balance
 
+month = 0
 while month < 12:
-    min_monthly_payment()
-    month_unpaid_balance()
-    prev_balance()
     month += 1
-    minimum_monthly_payment = monthly_payment_rate * new_balance
-    monthly_unpaid_balance = new_balance - minimum_monthly_payment
-    new_balance = monthly_unpaid_balance + annual_interest_rate / 12.0 * monthly_unpaid_balance
-
-remaining_balance = prev_balance()
-
-print("Remaining balance:", round(remaining_balance, 2))
+    minimum_monthly_payment = calculate_minimum_monthly_payment(monthly_payment_rate, balance)
+    #print(f"Payment for month {month} value {minimum_monthly_payment}")
+    monthly_unpaid_balance = calculate_monthly_unpaid_balance(balance, minimum_monthly_payment)
+    balance = get_updated_monthly_balance(monthly_unpaid_balance, annual_interest_rate)
+    
+print("Remaining balance:", round(balance, 2))
 
 
 
