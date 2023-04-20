@@ -42,7 +42,7 @@ month = 0
 while month < 12:
     month += 1
     minimum_monthly_payment = calculate_minimum_monthly_payment(monthly_payment_rate, balance)
-    #print(f"Payment for month {month} value {minimum_monthly_payment}")
+    print(f"Payment for month {month} value {minimum_monthly_payment}")
     monthly_unpaid_balance = calculate_monthly_unpaid_balance(balance, minimum_monthly_payment)
     balance = get_updated_monthly_balance(monthly_unpaid_balance, annual_interest_rate)
     
